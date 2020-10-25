@@ -1,0 +1,64 @@
+import java.util.ArrayList;
+
+public class Student {
+    private int coursesNum; //кількість дисциплін
+    private RatingJournal[] ratingJournal; //масив, що складається з coursesNum елем. типу RatingJournal
+
+    public Student(int crsN) {
+        this.coursesNum = crsN;
+        this.ratingJournal = new RatingJournal[crsN];
+        for (int i = 0; i < crsN; ++i) {
+            ratingJournal[i] = new RatingJournal();
+        }
+    }
+
+
+    private static class RatingJournal {
+        private ArrayList<Integer> journal;
+
+        private RatingJournal() {
+            this.journal = new ArrayList<Integer>();
+        }
+
+        private void addMark(int mark) {
+            // додавання оцінки до журналу
+            journal.add(mark);
+        }
+
+        private double courseAverage() {
+            // розрахунок середньої оцінки для дисципліни
+            ArrayList courseMarks = journal;
+            if (courseMarks.size() == 0) {
+                return 0.0;
+            }
+            double cAvg = 0.0;
+            for (Object i : courseMarks) {
+                cAvg += (Integer) i;
+            }
+            return cAvg / courseMarks.size();
+
+        }
+
+    }
+
+	//вставить 1
+    
+	//вставить 2
+	
+	//вставить 3
+
+	
+	//вставить 4
+    
+
+
+
+    public static void main(String[] args) {
+        Student student = new Student(7);
+        student.addStudentsMark(5, 70);
+        for (int i = 0; i < student.coursesNum * 2; ++i) {
+            student.addStudentsMark(i%student.coursesNum, 82 + i);
+        }
+        System.out.println("Student`s average on semester: " + student.average());
+    }
+}
