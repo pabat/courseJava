@@ -41,7 +41,9 @@ public class Student {
 
     }
 
-	//вставить 1
+public void addStudentsMark(int course, int mark) {
+        ratingJournal[course].addMark(mark);
+}
     
 	//вставить 2
 	
