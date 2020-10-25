@@ -53,7 +53,9 @@ public double average() {
         return average / coursesNum;
 }
 	
-	//вставить 3
+public StudentWithDebt(String name, String secondName, int age) {
+        super(name, secondName, age);
+}
 
 	
 	//вставить 4
