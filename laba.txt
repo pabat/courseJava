@@ -58,7 +58,13 @@ public StudentWithDebt(String name, String secondName, int age) {
 }
 
 	
-	//вставить 4
+public void hasDebt(Student student){
+        if (student.isPresent == 0 ){
+            System.out.println("Student " + student.getName()+ " "+ student.getSecondName()+"  has a academic debt");
+        }
+    }
+
+}
     
 
 
