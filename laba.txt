@@ -45,7 +45,13 @@ public void addStudentsMark(int course, int mark) {
         ratingJournal[course].addMark(mark);
 }
     
-	//вставить 2
+public double average() {
+        double average = 0.0;
+        for (int i = 0; i < coursesNum; ++i) {
+            average += ratingJournal[i].courseAverage();
+        }
+        return average / coursesNum;
+}
 	
 	//вставить 3
 
